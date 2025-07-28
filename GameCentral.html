@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Coffee Making Game</title>
+    <link rel="stylesheet" href="GamerCentral.css">
+</head>
+<body>
+    <div id="game-container">
+        <h1>Make Your Coffee</h1>
+        <h3>EARN POINTS AND GET OFFERS TODAY!</h3>
+        <button id="start-button">Start Brewing</button>
+        <div id="coffee-machine">
+            <p id="status">Click 'Start Brewing' to make coffee</p>
+            <img id="coffee-cup" src="https://images.unsplash.com/photo-1511920170033-f8396924c348" alt="Coffee Cup" style="display: none;">">
+            <div id="progress-bar">
+                <div id="progress"></div>
+            </div>
+        </div>
+        <div id="actions">
+            <button class="action-button" id="add-water">Add Water</button>
+            <button class="action-button" id="add-coffee">Add Coffee</button>
+            <button class="action-button" id="add-milk">Add Milk</button>
+            <button class="action-button" id="stir">Stir</button>
+        </div>
+        <div id="score">Score: 0</div>
+        <div id="high-score">High Score: 0</div>
+        <button id="reset-button">Reset Game</button>
+    </div>
+    <script src="GamerCentral.js"></script>
+</body>
+</html>

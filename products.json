@@ -1,0 +1,99 @@
+[
+    {
+        "id": 1,
+        "name": "ESPRESSO",
+        "price": 200,
+        "image": "Images/menu-1.avif"
+    },
+    {
+        "id": 2,
+        "name": "AMERICANO",
+        "price": 400,
+        "image": "Images/menu-2.avif"
+    },
+    {
+        "id": 3,
+        "name": "LATTE",
+        "price": 300,
+        "image": "Images/menu-3.avif"
+    },
+    {
+        "id": 4,
+        "name": "CAPPUCCINO",
+        "price": 200,
+        "image": "Images/Menu-item 4.jpg"
+    },
+    {
+        "id": 5,
+        "name": "MACCHIATO",
+        "price": 300,
+        "image": "Images/Menu-item 5.jpg"
+    },
+    {
+        "id": 6,
+        "name": "MOCHA",
+        "price": 200,
+        "image": "Images/Menu-item 6.jpg"
+    },
+    {
+        "id": 7,
+        "name": "FLAT WHITE",
+        "price": 240,
+        "image": "Images/Flat white.jpg"
+    },
+    {
+        "id": 8,
+        "name": "AFFOGATO",
+        "price": 250,
+        "image": "Images/Affogato.jpg"
+    },
+    {
+        "id": 9,
+        "name": "ICE CHOCLATE CAKE",
+        "price": 550,
+        "image": "Images/whipped-cream-chocolate-rustic-wood-generated-by-ai (1).jpg"
+    },
+    {
+        "id": 10,
+        "name": "STRAWBERRY CHOCO MILKSHAKE",
+        "price": 500,
+        "image": "Images/two-milk-shakes-table.jpg"
+    },
+    {
+        "id": 10,
+        "name": "VANILLA MILKSHAKE",
+        "price": 500,
+        "image": "Images/two-milkshakes-with-chocolate-strawberry_140725-68.jpg"
+    },
+    {
+        "id": 10,
+        "name": "PLAIN YORGHUT MILK",
+        "price": 500,
+        "image": "Images/tasty-milkshake-drink-with-straw_144627-42390.jpg"
+    },
+    {
+        "id": 10,
+        "name": "STRAWBERRY MILKSHAKE",
+        "price": 500,
+        "image": "Images/strawberry-milkshake-table.jpg"
+    },
+    {
+        "id": 10,
+        "name": "CHOCO CUP CAKE",
+        "price": 500,
+        "image": "Images/close-up-tasty-chocolate-cupcake.jpg"
+    },
+    {
+        "id": 10,
+        "name": "LEMON CUPCAKE",
+        "price": 500,
+        "image": "Images/colorful-cupcakes-with-delicious-frosting.jpg"
+    },
+    {
+        "id": 10,
+        "name": "CARMEL CUPCAKE",
+        "price": 500,
+        "image": "Images/cupcakes (1).jpg"
+    }
+
+]

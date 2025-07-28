@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CoffeeShop.css">
+    
+    <title>Dark Sister Coffee</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+
+        <a href="#" class="logo">
+            <img src="Images/dark-sister 4.jpeg" alt="">
+        </a>
+
+        <nav class="navbar">
+            <a href="#home">home</a>
+            <a href="#about">about</a>
+            <a href="#menu">menu</a>
+            <a href="#products">product</a>
+            <a href="#review">review</a>
+            <a href="#contact">contact</a>
+            <a href="#blogs">blogs</a>
+            <a href="#rewards">rewards</a>
+        </nav>
+
+
+        <div class="icons">
+            <div class="fas fa-search" id="search-btn"></div>
+            
+        </div>
+        
+
+        <div class="search-form">
+            <input type="search" id="search-box" placeholder="search here...">
+            <label for="search-box" class="fas fa-search"></label>
+        </div>
+
+    </header>
+
+
+
+
+    <section class="home" id="home">
+        <div class="content">
+            <h3>Fresh coffee in the morning</h3>
+            <p>Imagine waking up to the comforting aroma of freshly brewed coffee wafting through the air. The rich, earthy scent wraps around you like a warm blanket, inviting you to start the day. You pour yourself a steaming cup, the dark liquid swirling and mingling with the first rays of morning sunlight. As you take that first sip, the bold flavors dance on your taste buds, awakening your senses and filling you with a gentle surge of energy</p>
+            <a href="#menu" class="btn">get yours now</a>
+            <a href="#gift-cards" class="btn" style="background-color: #d3ad7f; color: white;">gift cards</a>
+        </div>
+    </section>
+
+
+
+    <section class="about" id="about">
+        <h1 class="heading"><span>about</span> us </h1>
+
+        <div class="row">
+
+            <div class="images">
+                <img src="images/freepik__comic-art-graphic-novel-art-comic-illustration-hig__76217.jpeg" alt="">
+            </div>
+
+            <div class="content">
+                <h3>what makes our coffee special?</h3>
+                <p>                    
+                    Dark Sister Coffee Shop: Where Every Bean Tells a Story
+                    
+                    In the heart of Kisii County, nestled amidst the rolling hills and lush landscapes, lies a hidden gem – Dark Sister Coffee Shop. Founded by two sisters with a shared passion for coffee and community, Dark Sister is more than just a place to get your caffeine fix. It's a tribute to the rich coffee heritage of Kenya and the warmth of sisterhood.
+                    
+                    **Our Journey Begins:**
+                    Born and raised in Kisii, we grew up surrounded by the aroma of freshly roasted coffee beans. Our parents, coffee farmers, instilled in us a deep appreciation for the art of coffee-making. From the tender age of five, we would accompany them to the coffee fields, learning the delicate process of nurturing and harvesting the finest Arabica beans.
+                    
+                    **A Dream Realized:**
+                    Driven by our love for coffee and a desire to create a space where people could come together, we set out on a mission to bring the essence of our homeland to every cup. Dark Sister was born out of a dream – a dream to share the unique flavors of Kisii with the world and to create a haven where stories are shared, friendships are forged, and memories are made.
+                    
+                    **Our Commitment:**
+                    At Dark Sister, we are committed to sourcing only the finest, sustainably-grown coffee beans. Each batch is carefully roasted to perfection, ensuring that every cup delivers a symphony of flavors that dance on your palate. Our skilled baristas craft each drink with love and precision, making sure that every visit is a delightful experience.
+                    
+                    **Join Us:**
+                    Whether you're a seasoned coffee connoisseur or just beginning your coffee journey, Dark Sister welcomes you with open arms. Step into our cozy haven, savor the rich aromas, and let us take you on a sensory adventure. From the first sip to the last drop, you'll taste the passion and dedication that goes into every cup.
+                    
+                    Welcome to Dark Sister, where every bean tells a story, and every story is worth savoring.
+                    
+                               
+                    </p>
+                <a href="#" class="btn">learn more</a>
+            </div>
+
+
+        </div>
+
+        
+    </section>
+
+
+    <section class="menu" id="menu">
+        
+
+        <h1 class="heading"> our <span>menu</span> </h1>
+        <div class="box-container">
+
+            <div class="speech-recognition">
+                <h1>Voice order system</h1>
+                <p>This webpage uses Web Speech API to listen for speech and execute given order.</p>
+                <label for="speech recognition">Speech recognition</label>
+                <input type="text" name="" id="speechToText" placeholder="Voice Order..."
+                onclick=record()>
+            
+                <script>
+                    function record() {
+                        var recognition = new webkitSpeechRecognition();
+                        recognition.lang = "en-GB";
+            
+                        recognition.onresult = function(event) {
+                            console.log(event);
+                            document.getElementById('speechToText').value = event.results[0][0].transcript
+            
+                        }
+            
+                        recognition.start();
+                    }
+                </script>
+
+                <div class="container">
+                    <header>
+                        <div class="icon-cart">
+                            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path fill-rule="evenodd" d="M4 4a1 1 0 0 1 1-1h1.5a1 1 0 0 1 .979.796L7.939 6H19a1 1 0 0 1 .979 1.204l-1.25 6a1 1 0 0 1-.979.796H9.605l.208 1H17a3 3 0 1 1-2.83 2h-2.34a3 3 0 1 1-4.009-1.76L5.686 5H5a1 1 0 0 1-1-1Z" clip-rule="evenodd"/>
+                              </svg>                 
+                            
+                            <span>0</span>
+                        </div>
+                    </header>                    
+            
+                    <div class="listProduct">
+                        <div class="item">
+                            <img src="Images/menu-1.avif" alt="">
+                            <h2>NAME PRODUCT</h2>
+                            <div class="price">$200</div>
+                            <button class="addCart">
+                                Add To Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="cartTab">
+                    <h1>Shopping Cart</h1>
+                    <div class="listCart">
+                        <!-- Items will be dynamically added here -->
+                    </div>
+                    
+                    <div class="btn">
+                        <button class="close">CLOSE</button>
+                        <button class="checkOut" onclick="checkout()">CHECK OUT</button>
+                    </div>
+                </div>
+
+                <a href="GameCentral.html" class="fa fa-gamepad" style="color:#d3ad7f; font-size: 35px;"></a>
+                <a href="CakeGame.html"><i class="fa fa-birthday-cake" style="font-size:35px;color:#d3ad7f; padding:3px"></i></a>
+
+                
+            </div>
+                
+                        
+                    
+
+            
+
+    </section>
+
+
+    <section class="prodcuts" id="products">
+
+        <h1 class="heading"> our <span>products</span> </h1>
+
+        <div class="box-container">
+            <div class="box">
+                <div class="icons">
+                    <a href="#" class="fas fa-shopping-cart"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="images/product-1.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>fresh coffee</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half"></i>                        
+                    </div>
+                    <div class="price">$15.99 <span>$20.99</span></div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="icons">
+                    <a href="#" class="fas fa-shopping-cart"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="images/product-2.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>fresh coffee</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half"></i>                       
+                    </div>
+                    <div class="price">$15.99 <span>$20.99</span></div>
+                </div>
+
+            </div>
+            
+            <div class="box">
+                <div class="icons">
+                    <a href="#" class="fas fa-shopping-cart"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="images/product-3.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>fresh coffee</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half"></i>                        
+                    </div>
+                    <div class="price">$15.99 <span>$20.99</span></div>
+                </div>
+            </div> 
+
+        </div>
+
+
+    </section>
+
+
+    <section class="review" id="review">
+
+        <h1 class="heading"> customer's <span>review</span></h1>
+
+        <div class="box-container">
+
+            <div class="box">
+                <img src="images/quote-img.jpg" alt="" class="quote">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, officiis quam. Quis ipsa neque sint, labore voluptatibus voluptas deserunt odio, facilis reiciendis illum tempore officia deleniti. Dicta omnis perferendis asperiores.</p>
+                <img src="images/pic-1.png" class="user" alt="">
+                <h3>john deo</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half"></i>                       
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="images/quote-img.jpg" alt="" class="quote">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, officiis quam. Quis ipsa neque sint, labore voluptatibus voluptas deserunt odio, facilis reiciendis illum tempore officia deleniti. Dicta omnis perferendis asperiores.</p>
+                <img src="images/pic-2.jpg" class="user" alt="">
+                <h3>alice brown</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half"></i>                       
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="images/quote-img.jpg" alt="" class="quote">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, officiis quam. Quis ipsa neque sint, labore voluptatibus voluptas deserunt odio, facilis reiciendis illum tempore officia deleniti. Dicta omnis perferendis asperiores.</p>
+                <img src="images/pic-3.jpg" class="user" alt="">
+                <h3>cole jacobs'</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half"></i>                       
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <section class="contact" id="contact">
+
+        <h1 class="heading"> <span>contact</span> us </h1>
+
+        <div class="row">
+            
+            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d888197.6248537601!2d-95.93072291532904!3d29.58850900861625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c5969b2e4949%3A0x909ec8c843b5fea5!2sCalzada&#39;s%20General%20Remodeling!5e0!3m2!1sen!2ske!4v1728905538516!5m2!1sen!2ske"allowfullscreen="" loading="lazy"></iframe>
+
+            <form action="">
+                <h3>get in touch</h3>
+                <div class="inputBox">
+                    <span class="fas fa-user"></span>
+                    <input type="text" placeholder="name">
+                </div>
+                <div class="inputBox">
+                    <span class="fas fa-envelope"></span>
+                    <input type="email" placeholder="email">
+                </div>
+                <div class="inputBox">
+                    <span class="fas fa-phone"></span>
+                    <input type="number" placeholder="number">
+                </div>
+                <input type="submit" value="contact now" class="btn">
+            </form>
+
+        </div>
+    </section>
+
+
+
+    <section class="blogs" id="blogs">
+        <h1 class="heading"> our <span>blogs</span></h1>
+
+        <div class="box-container">
+
+            <div class="box">
+                <div class="image">
+                    <img src="images/blog-1.jpg" alt="">
+                </div>
+                <div class="content">
+                    <a href="#" class="title">tasty and refreshing coffee</a>
+                    <span>by admin / 12th october, 2024</span>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet temporibus eveniet voluptatem quibusdam, facilis sed sint. Reprehenderit similique consequuntur quaerat cum officiis tempora architecto! Ipsam modi magnam accusantium autem ad.</p>
+                    <a href="#" class="btn">read more</a>
+                </div>
+            </div>
+
+            
+                <div class="box">
+                    <div class="image">
+                        <img src="images/blog-2.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <a href="#" class="title">tasty and refreshing coffee</a>
+                        <span>by admin / 12th october, 2024</span>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet temporibus eveniet voluptatem quibusdam, facilis sed sint. Reprehenderit similique consequuntur quaerat cum officiis tempora architecto! Ipsam modi magnam accusantium autem ad.</p>
+                        <a href="#" class="btn">read more</a>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="image">
+                        <img src="images/blog-3.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <a href="#" class="title">tasty and refreshing coffee</a>
+                        <span>by admin / 12th october, 2024</span>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet temporibus eveniet voluptatem quibusdam, facilis sed sint. Reprehenderit similique consequuntur quaerat cum officiis tempora architecto! Ipsam modi magnam accusantium autem ad.</p>
+                        <a href="#" class="btn">read more</a>
+                    </div>
+                </div>
+
+
+
+        </div>
+    </section>
+
+
+    <section class="rewards" id="rewards">
+        <h1 class="heading">Our <span> Rewards</span></h1>
+        <div class="banner">
+            <div class="product">
+                <div class="coffee"
+                style="--url: url(Images/Banner_5.jpeg)"></div>
+
+                <div class="coffee"
+                style="--url: url(Images/Banner_4.jpeg)"></div>            
+            </div>
+            <div class="content">
+                <h2>October Challenge</h2>
+                <p>Step 1: Solve the riddles! At the coffee counter, you'll find three riddles about coffee or the coffee shop. You must correctly answer all three.
+
+                    Step 2: Decode the menu! Spot one item that matches a special clue hidden in the shop’s decor (e.g., a poster or quote on the wall).
+                    
+                    Step 3: Coffee trivia blitz! Answer a lightning round question from the barista about coffee history, brewing, or fun facts.
+                    
+                    Step 4: Win your reward! Successfully complete the challenge and claim your free coffee cup.</p>
+                <a href="#" class="btn">claim your reward</a>
+
+            </div>
+        </div>
+
+        <section class="new">
+            <h2>NEWS<span> Snippets</span></h2>
+            <div class="news">
+                <div class="image">
+                    <img src="Images/dark-sister 1.jpeg" alt="">
+                </div>
+                <div class="content">
+                    <img src="Images/news.png" alt="">
+                <ul>
+                    <li><a href="#">coffee bean harvest begins in kentucky</a></li>
+                    <li><a href="#">new brewing method for making coffee from scratch</a></li>
+                    <li><a href="#">coffee industry's future looks bright</a></li>
+                    <li><a href="#">coffee beans are growing faster than ever</a></li>                    
+                </ul>
+                
+                </div>
+                </div>
+                
+
+                
+            
+
+                
+    
+            </div>
+
+        </section>
+
+
+
+        
+
+    </section>
+
+
+
+    <section class="footer">
+
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="https://www.instagram.com/dark_sister_coffee?utm_source=qr&igsh=MXA5Y2p3b2Qybjc2aA==" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+            <a href="https://pin.it/28gBYRQ8d" class="fab fa-pinterest"></a>
+        </div>
+
+        <div class="links">
+            <a href="#home">home</a>
+            <a href="#about">about</a>
+            <a href="#menu">menu</a>
+            <a href="#products">products</a>
+            <a href="#review">review</a>
+            <a href="#contact">contact</a>
+            <a href="#blogs">blogs</a>
+        </div>
+
+        <div class="credit">created by <span> lennox lewis</span> | all rights reserved</div>
+
+    </section>
+
+
+
+
+
+
+
+    <script src="CoffeeShop.js"></script>
+    <script>
+        function checkout() {
+            const cartItems = document.querySelector('.listCart').children;
+            if (cartItems.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+
+            let confirmation = 'You are checking out the following items:\n';
+            Array.from(cartItems).forEach(item => {
+                const itemName = item.querySelector('h2').innerText;
+                const itemPrice = item.querySelector('.price').innerText;
+                confirmation += `- ${itemName}: ${itemPrice}\n`;
+            });
+
+            confirmation += `\nTotal: $${document.getElementById('cartTotal').innerText}`;
+            confirmation += '\n\nThank you for shopping with us!';
+            alert(confirmation);
+
+            // Clear the cart after checkout
+            document.querySelector('.listCart').innerHTML = '';
+            document.getElementById('cartTotal').innerText = '0.00';
+        }
+    </script>
+
+</body>
+</html>

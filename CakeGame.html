@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cake Making Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: black;
+            color: white; /* Ensure text is visible on black background */
+        }
+        canvas {
+            border: 1px solid #000;
+            margin-top: 20px;
+        }
+        .controls {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            background-color: #555; /* Slightly darker background on hover */
+            color: white; /* Ensure text remains visible */
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        @keyframes layerDrop {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .animated-layer {
+            animation: layerDrop 0.5s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <h1>Interactive Cake Making Game</h1>
+    <p>Score: <span id="score">0</span></p>
+    <canvas id="cakeCanvas" width="400" height="400"></canvas>
+    <p>Challenge: <span id="challenge">None</span></p>
+    <p>Bonus Points: <span id="bonus">0</span></p>
+    <div class="controls">
+        <button onclick="addLayer('chocolate')">Add Chocolate Layer</button>
+        <button onclick="addLayer('vanilla')">Add Vanilla Layer</button>
+        <button onclick="addLayer('strawberry')">Add Strawberry Layer</button>
+        <button onclick="resetCake()">Reset Cake</button>
+    </div>
+    <div id="finalResult" style="display: none; margin-top: 20px;">
+        <h2>Final Result</h2>
+        <p>Your Score: <span id="finalScore">0</span></p>
+        <p>High Score: <span id="highScore">0</span></p>
+        <canvas id="finalCakeCanvas" width="400" height="400"></canvas>
+        <button onclick="restartGame()">Play Again</button>
+    </div>
+    <script>
+        const canvas = document.getElementById('cakeCanvas');
+        const ctx = canvas.getContext('2d');
+        const layers = [];
+        const layerHeight = 40;
+        let score = 0;
+        let bonusPoints = 0;
+        let currentChallenge = [];
+        let highScore = 0;
+
+        function drawCake() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < layers.length; i++) {
+                ctx.save();
+                ctx.fillStyle = layers[i];
+                ctx.translate(0, canvas.height - (i + 1) * layerHeight);
+                ctx.fillRect(100, 0, 200, layerHeight);
+                ctx.restore();
+            }
+        }
+
+        function updateScore() {
+            document.getElementById('score').textContent = score;
+        }
+
+        function generateChallenge() {
+            const flavors = ['chocolate', 'vanilla', 'strawberry'];
+            currentChallenge = Array.from({ length: 3 }, () => flavors[Math.floor(Math.random() * flavors.length)]);
+            document.getElementById('challenge').textContent = currentChallenge.join(' -> ');
+        }
+
+        function checkChallenge() {
+            if (layers.slice(-3).join() === currentChallenge.join()) {
+                bonusPoints += 10;
+                document.getElementById('bonus').textContent = bonusPoints;
+                alert('Challenge completed! You earned 10 bonus points!');
+                generateChallenge();
+            }
+        }
+
+        function addLayer(flavor) {
+            const colors = {
+                chocolate: '#8B4513',
+                vanilla: '#F3E5AB',
+                strawberry: '#FFC0CB'
+            };
+            if (layers.length * layerHeight < canvas.height) {
+                layers.push(colors[flavor]);
+                score++;
+                updateScore();
+                drawCake();
+                if (layers.length >= 3) {
+                    checkChallenge();
+                }
+            } else {
+                alert('The cake is too tall!');
+            }
+        }
+
+        function resetCake() {
+            layers.length = 0;
+            score = 0;
+            bonusPoints = 0;
+            updateScore();
+            document.getElementById('bonus').textContent = bonusPoints;
+            drawCake();
+            generateChallenge();
+        }
+
+        function finishCake() {
+            document.getElementById('finalResult').style.display = 'block';
+            document.getElementById('finalScore').textContent = score + bonusPoints;
+
+            if (score + bonusPoints > highScore) {
+                highScore = score + bonusPoints;
+            }
+            document.getElementById('highScore').textContent = highScore;
+
+            const finalCanvas = document.getElementById('finalCakeCanvas');
+            const finalCtx = finalCanvas.getContext('2d');
+            finalCtx.clearRect(0, 0, finalCanvas.width, finalCanvas.height);
+
+            for (let i = 0; i < layers.length; i++) {
+                finalCtx.fillStyle = layers[i];
+                finalCtx.fillRect(100, finalCanvas.height - (i + 1) * layerHeight, 200, layerHeight);
+            }
+
+            document.querySelector('.controls').style.display = 'none';
+            document.getElementById('cakeCanvas').style.display = 'none';
+        }
+
+        function restartGame() {
+            document.getElementById('finalResult').style.display = 'none';
+            document.querySelector('.controls').style.display = 'block';
+            document.getElementById('cakeCanvas').style.display = 'block';
+            resetCake();
+        }
+
+        // Add a button to finish the cake
+        const finishButton = document.createElement('button');
+        finishButton.textContent = 'Finish Cake';
+        finishButton.onclick = finishCake;
+        document.querySelector('.controls').appendChild(finishButton);
+
+        drawCake();
+        generateChallenge();
+    </script>
+</body>
+</html>
